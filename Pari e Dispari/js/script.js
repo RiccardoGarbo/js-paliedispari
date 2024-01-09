@@ -11,7 +11,7 @@
 //2-Creo le variabili per raccogliere gli elementi dal file HTML
 const form = document.querySelector('form')
 const inputNumberUser = document.querySelector('input')
-const result = document.querySelector('h1')
+const winner = document.querySelector('h1')
 
 //3-Genero un numero random tra 1-5 attraverso una funzione
 function randomNumber() {
@@ -20,7 +20,7 @@ function randomNumber() {
 //4-Prendo il valore datomi dall'user attraverso una funzione 
 form.addEventListener('submit', function (e) {
     e.preventDefault();
-    let userNumber = parseInt(inputNumberUser.value)
+    const userNumber = parseInt(inputNumberUser.value)
     if (isNaN(userNumber) || userNumber < 1 || userNumber > 5) {
         alert('Inserisci un numero da 1 a 5')
         return;
@@ -31,8 +31,15 @@ form.addEventListener('submit', function (e) {
     //5-Sommare il numero dell'utente con il numero del computer
     const sum = userNumber + numberCpu
     console.log(sum, 'somma numeri cpu e user')
-
-
+    //6-Stabilisco con una funzione se il numero è pari o dispari
+    let result = isEven(sum) ? 'Pari' : 'Dispari'
+    console.log(result)
+    winner.innerText += result
 })
+function isEven(number) {
+    return number % 2 === 0;
+}
+
+
 
 
