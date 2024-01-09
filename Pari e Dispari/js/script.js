@@ -12,3 +12,8 @@ const form = document.querySelector('form')
 const numberUser = document.querySelector('input')
 const result = document.querySelector('h1')
 
+//3-Genero un numero random tra 1-5 attraverso una funzione
+function randomNumber() {
+    return Math.floor(Math.random() * 5) + 1
+}
+
