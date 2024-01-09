@@ -47,8 +47,8 @@ form.addEventListener('submit', function (e) {
     } else {
         winner.innerHTML = 'Ha vinto la CPU'
     }
-    cpu.innerText += numberCpu
-    player.innerText += choisePlayer + ' e il numero ' + userNumber
+    cpu.innerText = `alla gpu è uscito il numero:${numberCpu}`
+    player.innerText = `il giocatore ha scelto : ${choisePlayer}  e il numero ${userNumber}`
     sumResult.innerText = `La somma dei numeri è ${sum} quindi ${result} !`
 
 })
